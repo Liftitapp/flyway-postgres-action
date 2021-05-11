@@ -7,7 +7,6 @@ ls $GITHUB_WORKSPACE
 echo "SQL Folder:"
 ls $GITHUB_WORKSPACE/$INPUT_FLYWAY_SQL
 cp -rf $GITHUB_WORKSPACE/$INPUT_FLYWAY_SQL/* /flyway/sql/
-cp -rf $GITHUB_WORKSPACE/$INPUT_FLYWAY_SQL/* /flyway-6.4.0/sql/
 
 flyway info
 bash /pre-migration.sh
