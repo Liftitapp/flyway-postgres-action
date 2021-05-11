@@ -2,6 +2,8 @@
 
 echo $INPUT_FLYWAY_CONF_SHA | base64 -d > /flyway/conf/flyway.conf
 
+ls $GITHUB_WORKSPACE
+ls $GITHUB_WORKSPACE/$INPUT_FLYWAY_SQL
 cp -rf $GITHUB_WORKSPACE/$INPUT_FLYWAY_SQL/* /flyway/sql
 
 flyway info
