@@ -2,7 +2,7 @@
 
 echo $INPUT_FLYWAY_CONF_SHA | base64 -d > /flyway/conf/flyway.conf
 
-cp -rf $INPUT_FLYWAY_SQL/* /flyway/sql
+cp -rf $GITHUB_WORKSPACE/$INPUT_FLYWAY_SQL/* /flyway/sql
 
 flyway info
 bash /pre-migration.sh
