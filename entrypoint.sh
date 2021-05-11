@@ -8,6 +8,9 @@ echo "SQL Folder:"
 ls $GITHUB_WORKSPACE/$INPUT_FLYWAY_SQL
 cp -rf $GITHUB_WORKSPACE/$INPUT_FLYWAY_SQL/* /flyway/sql/
 
+echo "SQL Folder:"
+ls /flyway/sql
+
 flyway info
 bash /pre-migration.sh
 
@@ -25,4 +28,5 @@ cd /flyway/
 echo $INPUT_POST_MIGRATION_BASH_SHA | base64 -d > post_migration.sh
 bash post_migration.sh
 
+echo "SQL Folder:"
 ls /flyway/sql
